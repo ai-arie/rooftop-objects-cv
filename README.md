@@ -6,10 +6,10 @@
 - The best weights (.onnx file) for the segmentation model, which are not mandatory for the submission, can be found here: https://drive.google.com/file/d/1RYaDK6SvV30_BQ9i6MJFCut9hzHC6DuD/view?usp=share_link
 
 - Note that due to IP constraints, the images are not published in this repository. The following information about the images would also to recreate such a dataset:
-- source: GoogleMapsAPI
-- image size: 400x400
-- zoom: 20
-- 1000 images, each centred on a rooftop in Germany were used. >90\% of the images had a rooftop object on them (e.g. PV/Thermal panel/Windows). 
+      * source: GoogleMapsAPI
+      * image size: 400x400
+      * zoom: 20
+      * 1000 images, each centred on a rooftop in Germany were used. >90\% of the images had a rooftop object on them (e.g. PV/Thermal panel/Windows). 
 
 - The 'coco_data.zip' file contains the annotations in the COCO format (.json file).
 
