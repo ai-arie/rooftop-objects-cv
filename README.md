@@ -1,4 +1,4 @@
-# Detection and Segmentation of Photovoltaic Installations in Germany
+# Detection and Segmentation of Photovoltaic Installations and other rooftop objects in Germany
 
 - 'yolov7-seg' is the custom version of the VOLOv7 segmentation model (based on https://github.com/WongKinYiu/yolov7/tree/u7/seg)
 - 'yolov7-det' is the custom version of the main branch of VOLOv7 (based on https://github.com/WongKinYiu/yolov7)
@@ -12,6 +12,16 @@
       * 1000 images, each centred on a rooftop in Germany were used. >90\% of the images had a rooftop object on them (e.g. PV/Thermal panel/Windows). <br>
 
 - The 'coco_data.zip' file contains the annotations in the COCO format (.json file).
+
+- Classes in the dataset:
+  1. Rooftype (flat/tilted)
+  2. PV
+  3. Thermal Panels
+  4. Roof Windows
+  5. Wintergarden Ceiling
+  6. Dormers
+  7. PV-negative **
+
 
 - The code notebooks in the 'code' folder are:
     1. convert-bbox-annotations-coco-to-yolo.ipynb :
@@ -40,3 +50,6 @@
         - need the output of 'convert-segmentation-annotations-coco-to-yolo.ipynb' in order to run.
 
 IMPORTANT: in all the notebooks above, one has to change the path to the directory when running to your location. All notebooks should run on Google Colab. 
+
+
+** PV-negative: Ended up not using this class in the analysis. These annotations denote cases where the PV installation is non-enclosing, meaning there is a piece of roof in the center of the installation which is not covered by PV-cells. YOLO is able to correctly segment objects even without specifying these cases.
